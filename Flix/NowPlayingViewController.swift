@@ -23,15 +23,14 @@ class NowPlayingViewController: UIViewController, UITableViewDataSource {
         refreshControl.addTarget(self, action: #selector(NowPlayingViewController.didPullToRefresh(_:)), for: .valueChanged)
         tableView.insertSubview(refreshControl, at: 0)
         tableView.dataSource = self
+        tableView.rowHeight = 180
     
         fetchMovies()
         
     }
 
     @objc func didPullToRefresh(_ refreshControl: UIRefreshControl) {
-        
         fetchMovies()
-
     }
     
     func fetchMovies() {
@@ -44,7 +43,6 @@ class NowPlayingViewController: UIViewController, UITableViewDataSource {
                 print(error.localizedDescription)
             } else if let data = data {
                 let dataDictionary = try! JSONSerialization.jsonObject(with: data, options: []) as! [String: Any]
-                //                 print(dataDictionary)
                 let movies = dataDictionary["results"] as! [[String: Any]]
                 self.movies = movies
                 self.tableView.reloadData()
