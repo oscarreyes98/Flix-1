@@ -177,8 +177,8 @@
 		FE64E6DD20310F8E009C5CA1 /* ViewControllers */ = {
 			isa = PBXGroup;
 			children = (
-				FEE95D9D202BE02B00B0342B /* NowPlayingViewController.swift */,
 				FE64E6DF20311004009C5CA1 /* DetailViewController.swift */,
+				FEE95D9D202BE02B00B0342B /* NowPlayingViewController.swift */,
 				FE64E6E32031188A009C5CA1 /* SuperheroViewController.swift */,
 			);
 			path = ViewControllers;
